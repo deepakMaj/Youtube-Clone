@@ -1,0 +1,4 @@
+{
+  "mongoUri": "mongodb+srv://Deepak:708745@youtube.iuyoe.mongodb.net?retryWrites=true&w=majority",
+  "jwtSecret": "deepak708745"
+}

@@ -1,0 +1,49 @@
+<div class="ui card">
+  <div class="content">
+    <div class="ui grid">
+      <div class="six wide column">
+        <img src="../../../assets/images/youtube.png" class="img">
+        <span class="yt">YouTube</span>
+      </div>
+      <div class="ten wide column">
+        <div class="container">
+          <h2 class="signup">Sign Up</h2>
+          <form autocomplete="off" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" ngNativeValidate>
+            <div class="ui grid">
+              <div class="eight wide column">
+                <input type="text" placeholder="First Name" class="inputStyle" name="firstName" #firstName="ngModel"
+                  [(ngModel)]="user.firstName" required />
+              </div>
+              <div class="eight wide column">
+                <input type="text" placeholder="Last Name" class="inputStyle" name="lastName" #lastName="ngModel"
+                  [(ngModel)]="user.lastName" required />
+              </div>
+            </div>
+            <div class="tooltip" style="margin-top: 2em;">
+              <input type="email" placeholder="Email" class="inputStyle forEmail" name="email" #email="ngModel"
+                [(ngModel)]="user.email" required
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" />
+            </div>
+            <div class="ui grid" style="margin-top: 1.6em;">
+              <div class="eight wide column">
+                <input type="password" placeholder="Password" class="inputStyle" name="password" #password="ngModel"
+                  [(ngModel)]="user.password" required minlength="6" />
+              </div>
+              <div class="eight wide column">
+                <input type="text" placeholder="Confirm Password" class="inputStyle" name="conPassword"
+                  #conPassword="ngModel" [(ngModel)]="user.password" required minlength="6" />
+              </div>
+            </div>
+            <div style="margin-top: 3em;">
+              <button type="submit" class="ui secondary button" [disabled]="signupForm.invalid">
+                SIGN UP
+              </button>
+            </div>
+          </form>
+          <p style="color: rgb(194, 194, 194); text-align: center; font-size: 15px; margin-top: 1em">Already registered?
+            <a routerLink="/login" style="color: white; font-weight: 600">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

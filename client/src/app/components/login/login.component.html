@@ -1,0 +1,34 @@
+<div class="ui card">
+  <div class="content">
+    <div class="ui grid">
+      <div class="six wide column">
+        <img src="../../../assets/images/youtube.png" class="img">
+        <span class="yt">YouTube</span>
+      </div>
+      <div class="ten wide column">
+        <div class="container">
+          <h2 class="signup">Login</h2>
+          <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" style="margin-top: 2em;"
+            ngNativeValidate>
+            <div>
+              <input type="email" placeholder="Email" class="inputStyle" class="inputStyle forEmail" name="email"
+                #email="ngModel" [(ngModel)]="user.email" required
+                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" />
+            </div>
+            <div style="margin-top: 2em;">
+              <input type="password" placeholder="Password" class="inputStyle forEmail" name="password"
+                #password="ngModel" [(ngModel)]="user.password" required minlength="6" />
+            </div>
+            <div style="margin-top: 3em;">
+              <button class="ui secondary button" [disabled]="loginForm.invalid">
+                LOGIN
+              </button>
+            </div>
+          </form>
+          <p style="color: rgb(194, 194, 194); text-align: center; font-size: 15px; margin-top: 1em">New to YouTube?
+            <a routerLink="/signup" style="color: white; font-weight: 600">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

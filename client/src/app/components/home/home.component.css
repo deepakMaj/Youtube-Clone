@@ -1,0 +1,39 @@
+.main{
+  margin: 0 3em 0 3em;
+}
+
+.ui.card{
+  margin-top: 1.5em;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.description{
+  color: #a0a0a0;
+  font-size: 16px;
+  margin-top: 0.3em;
+}
+
+.views{
+  color: #a0a0a0;
+  font-size: 16px;
+  margin-top: 0.1em;
+}
+
+.header{
+  font-size: 1.2em;
+  color: white;
+  font-weight: 600;
+}
+
+.desc{
+  margin-top: 0.1em;
+}
+
+.content{
+  margin-left: -5px;
+}
+
+.video.icon{
+  font-size:1.5em;
+}

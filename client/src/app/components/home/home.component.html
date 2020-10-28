@@ -1,0 +1,27 @@
+<div>
+  <ngx-spinner>
+    <strong style="font-size: 20px; color: white">Loading...</strong>
+  </ngx-spinner>
+  <div class="ui grid main">
+    <div *ngFor="let video of videos" class="four wide column">
+      <div class="ui card">
+        <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+          <div class="image">
+            <img [src]="video.snippet.thumbnails.medium.url" alt="...">
+          </div>
+          <div class="ui grid desc">
+            <div class="two wide column">
+              <i class="video icon"></i>
+            </div>
+            <div class="content fourteen wide column">
+              <a class="header">{{video.snippet.title.length > 50 ? video.snippet.title.substr(0, 50)+"..." : video.snippet.title}}
+              </a>
+              <div class="description">{{video.snippet.channelTitle}}</div>
+              <div class="views">{{convertCount(video.statistics.viewCount)}} views</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

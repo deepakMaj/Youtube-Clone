@@ -1,0 +1,87 @@
+<body style="background: #181818;">
+  <div class="ui sidebar inverted vertical menu" style="font-size: 1.3em;">
+    <a class="item">
+      <div>
+        <i class="home icon"></i>
+        <span class="sideTitle">Home</span>
+      </div>
+    </a>
+    <a class="item">
+      <div>
+        <i class="fire icon"></i>
+        <span class="sideTitle">Trending</span>
+      </div>
+    </a>
+    <a class="item" *ngIf="loggedIn">
+      <div>
+        <i class="tv icon"></i>
+        <span class="sideTitle">Subsrciptions</span>
+      </div>
+    </a>
+    <a class="item">
+      <div>
+        <i class="settings icon"></i>
+        <span class="sideTitle">Settings</span>
+      </div>
+    </a>
+    <a class="item" href="https://www.github.com/deepakMaj">
+      <div>
+        <img src="../../../assets/images/youtube.png" class="yt-icon" />
+        <span class="sideTitle">About</span>
+      </div>
+    </a>
+  </div>
+  <div class="pusher" style="background: #181818;">
+    <div class="ui inverted segment">
+      <div class="ui inverted secondary menu">
+        <p class="item">
+          <i class="bars icon" (click)="openSidebar()"></i>
+        </p>
+        <a class="title-main" style="cursor: pointer;" routerLink="/" routerLinkActive="active">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="45" viewBox="0 0 172 172"
+            style=" fill:#000000; margin-top: -13px;">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+              font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g>
+                <path
+                  d="M154.8,121.475c-1.43333,7.525 -7.525,13.25833 -15.05,14.33333c-11.825,1.79167 -31.53333,3.94167 -53.75,3.94167c-21.85833,0 -41.56667,-2.15 -53.75,-3.94167c-7.525,-1.075 -13.61667,-6.80833 -15.05,-14.33333c-1.43333,-8.24167 -2.86667,-20.425 -2.86667,-35.475c0,-15.05 1.43333,-27.23333 2.86667,-35.475c1.43333,-7.525 7.525,-13.25833 15.05,-14.33333c11.825,-1.79167 31.53333,-3.94167 53.75,-3.94167c22.21667,0 41.56667,2.15 53.75,3.94167c7.525,1.075 13.61667,6.80833 15.05,14.33333c1.43333,8.24167 3.225,20.425 3.225,35.475c-0.35833,15.05 -1.79167,27.23333 -3.225,35.475z"
+                  fill="#ff1600"></path>
+                <path d="M71.66667,111.08333v-50.16667l43,25.08333z" fill="#ffffff"></path>
+              </g>
+            </g>
+          </svg>
+          <span class="title" id="fonts">YouTube</span>
+        </a>
+        <span class="in">IN</span>
+        <app-search></app-search>
+        <div class="right menu" *ngIf="!loggedIn">
+          <div class="item" style="font-weight: 600;">
+            <a routerLink="/signup" routerLinkActive="active" class="ui instagram button" style="margin-right: 1em;">
+              Sign Up
+            </a>
+            <a routerLink="/login" routerLinkActive="active" class="ui youtube button">
+              Login
+            </a>
+          </div>
+        </div>
+        <div class="right menu" style="margin-top: -10px;" *ngIf="loggedIn">
+          <div class="item">
+            <i class="user circle icon" style="font-size: 2em;"></i>
+            <strong>{{user.firstName}} {{user.lastName}}</strong>
+          </div>
+          <div class="item" style="font-weight: 600;">
+            <a class="ui youtube button" (click)="onClickLogout()">
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <flash-messages></flash-messages>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</body>

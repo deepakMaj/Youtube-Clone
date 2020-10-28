@@ -1,0 +1,33 @@
+.searchInput{
+  padding: 6px;
+  padding-left: 15px;
+  outline: none;
+  font-size: 1.3em;
+  width: 35em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  margin-top: -10px;
+  background: black;
+  color: #ada7a7;
+  border: 1px solid #454343;
+}
+
+.searchBtn{
+  cursor: pointer;
+  padding: 8px;
+  margin-top: -11px;
+  width: 5em;
+  margin-left: -1px;
+  color: #767171;
+  border: 1px solid #454343;
+  background: #353434;
+  border: 1px solid #353434;
+}
+
+.searchBtn:focus{
+  outline: none;
+}
+
+.searchBtn:hover{
+  color:#9b9494;
+}

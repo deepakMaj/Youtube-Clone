@@ -1,0 +1,6 @@
+<div class="item" style="transform: translate(10em, 0px);">
+  <input type="text" class="searchInput" placeholder="Search" list="autoList"
+    (keyup)="getAutocomplete($event.target.value)" [(ngModel)]="searchInput">
+  <datalist id="autoList"></datalist>
+  <button class="searchBtn" (click)="getValue(searchInput)"><i class="search icon"></i></button>
+</div>
