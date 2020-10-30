@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.spinner.show();
     setTimeout(() => this.spinner.hide(), 4000);
     this.videos = [];
-    this.youtubeService.getVideos().subscribe(res => {
+    this.youtubeService.getVideos(50).subscribe(res => {
       for (let list of res["items"]) {
         this.videos.push(list);
       }

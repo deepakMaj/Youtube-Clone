@@ -13,6 +13,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { WatchVideoComponent } from './components/watch-video/watch-video.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { SearchResultComponent } from './components/search-result/search-result.
     SignupComponent,
     HomeComponent,
     SearchComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    WatchVideoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { SearchResultComponent } from './components/search-result/search-result.
     FlashMessagesModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

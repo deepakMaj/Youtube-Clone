@@ -1,0 +1,84 @@
+<div class="ui grid" style="margin: 2em;">
+  <div class="ten wide column">
+    <youtube-player videoId={{id}} suggestedQuality="highres" [height]="500" [width]="950">
+    </youtube-player>
+    <div *ngIf="video.length !== 0" class="data">
+      <h5 class="title">{{video.snippet.title}}</h5>
+      <div style="display: flex;" class="views">
+        <div>{{convertCount(video.statistics.viewCount)}} views</div>
+        <i class="dot circle icon"></i>
+        <div>{{convertDate(video.snippet.publishedAt)}}</div>
+        <div class="views likes">
+          <div>
+            <i class="thumbs up icon"></i>
+            <span>{{convertLikes(video.statistics.likeCount)}}</span>
+          </div>
+          <div style="margin-left: 1em;">
+            <i class="thumbs down icon" style="vertical-align: -3px;"></i>
+            <span>{{convertLikes(video.statistics.dislikeCount)}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div style="display: flex;">
+        <div style="display: flex;">
+          <img [src]="channel.snippet.thumbnails.default.url" *ngIf="channel.length !== 0" class="ui avatar image">
+          <div class="channelDesc">
+            <p class="channelTitle">{{video.snippet.channelTitle}}</p>
+            <span class="views" *ngIf="channel.length !== 0"
+              style="display: block; margin-top: -15px;">{{convertLikes(channel.statistics.subscriberCount)}}
+              views</span>
+            <div class="viddesc" *ngIf="!toggle">
+              {{video.snippet.description.substr(0, 100)}}...
+            </div>
+            <div class="viddesc" *ngIf="toggle">
+              {{video.snippet.description}}
+            </div>
+            <div (click)="toggleShow()" class="show">SHOW {{toggle ? "LESS" : "MORE"}}
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+          <button class="ui youtube button">SUBSCRIBE</button>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="comments">
+        <h4 class="channelTitle" style="margin-bottom: 1.5em;">{{convertCount(video.statistics.commentCount)}} COMMENTS
+        </h4>
+        <div *ngFor="let comment of comments">
+          <div style="display: flex; margin-bottom: 2em">
+            <img [src]="comment.snippet.topLevelComment.snippet.authorProfileImageUrl" class="ui avatar image">
+            <div>
+              <div style="display: flex;">
+                <p class="disName">{{comment.snippet.topLevelComment.snippet.authorDisplayName}}</p>
+                <span class="comviews">{{convertMonth(comment.snippet.topLevelComment.snippet.publishedAt)}}</span>
+              </div>
+              <div class="comdesc">
+                {{comment.snippet.topLevelComment.snippet.textOriginal}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="four wide column" style="margin-left: 5em;">
+    <h5 class="channelTitle">MOST POPULAR</h5>
+    <div *ngFor="let video of videos" class="sixteen wide column">
+      <div class="ui card">
+        <div class="result">
+          <div class="image">
+            <img [src]="video.snippet.thumbnails.medium.url" alt="..." style="width: 15em;">
+          </div>
+          <div class="content">
+            <a [routerLink]="['/watch']" [queryParams]="{ v: video.id }"
+              class="header">{{video.snippet.title.length > 50 ? video.snippet.title.substr(0, 50)+"..." : video.snippet.title}}
+            </a>
+            <div class="description">{{video.snippet.channelTitle}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

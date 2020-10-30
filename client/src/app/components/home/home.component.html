@@ -5,7 +5,7 @@
   <div class="ui grid main">
     <div *ngFor="let video of videos" class="four wide column">
       <div class="ui card">
-        <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+        <a [routerLink]="['/watch']" [queryParams]="{ v: video.id , channelId: video.snippet.channelId}">
           <div class="image">
             <img [src]="video.snippet.thumbnails.medium.url" alt="...">
           </div>

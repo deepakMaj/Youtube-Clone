@@ -1,24 +1,24 @@
 <body style="background: #181818;">
   <div class="ui sidebar inverted vertical menu" style="font-size: 1.3em;">
-    <a class="item">
+    <a class="item" routerLink="/" routerLinkActive="active">
       <div>
         <i class="home icon"></i>
         <span class="sideTitle">Home</span>
       </div>
     </a>
-    <a class="item">
+    <a class="item" href="!#">
       <div>
         <i class="fire icon"></i>
         <span class="sideTitle">Trending</span>
       </div>
     </a>
-    <a class="item" *ngIf="loggedIn">
+    <a class="item" *ngIf="loggedIn" href="!#">
       <div>
         <i class="tv icon"></i>
         <span class="sideTitle">Subsrciptions</span>
       </div>
     </a>
-    <a class="item">
+    <a class="item" href="!#">
       <div>
         <i class="settings icon"></i>
         <span class="sideTitle">Settings</span>
@@ -30,6 +30,7 @@
         <span class="sideTitle">About</span>
       </div>
     </a>
+    <div class="footer">YouTube &copy; 2020</div>
   </div>
   <div class="pusher" style="background: #181818;">
     <div class="ui inverted segment">

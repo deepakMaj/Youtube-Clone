@@ -5,12 +5,14 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuardService } from './guards/auth.guard';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { WatchVideoComponent } from './components/watch-video/watch-video.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: 'search', component: SearchResultComponent }
+  { path: '', component: HomeComponent },
+  { path: 'search', component: SearchResultComponent },
+  { path: 'watch', component: WatchVideoComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

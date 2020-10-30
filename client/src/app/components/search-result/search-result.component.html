@@ -14,7 +14,7 @@
             <img [src]="video.snippet.thumbnails.medium.url" alt="..." style="width: 28em;">
           </div>
           <div class="content">
-            <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank"
+            <a [routerLink]="['/watch']" [queryParams]="{ v: video.id.videoId, channelId: video.snippet.channelId}"
               class="header">{{video.snippet.title}}
             </a>
             <div class="description">{{video.snippet.channelTitle}}</div>

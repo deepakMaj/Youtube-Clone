@@ -14,8 +14,8 @@ export class YoutubeService {
 
   constructor(private http: HttpClient) { }
 
-  getVideos(): Observable<Object> {
-    let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&key=${this.apiKey}&maxResults=50&regionCode=IN`;
+  getVideos(max: any): Observable<Object> {
+    let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&key=${this.apiKey}&maxResults=${max}&regionCode=IN`;
     return this.http.get(url).pipe(map(res => {
       return res;
     }));
@@ -33,6 +33,27 @@ export class YoutubeService {
 
   getAutocomplete(query: any): Observable<Object> {
     let url = `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${query}`;
+    return this.http.get(url).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  getVideo(query: any): Observable<Object> {
+    let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${query}&key=${this.apiKey}`;
+    return this.http.get(url).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  getComments(id: any): Observable<Object> {
+    let url = `https://www.googleapis.com/youtube/v3/commentThreads?key=${this.apiKey}&textFormat=plainText&part=snippet&videoId=${id}&maxResults=20`;
+    return this.http.get(url).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  getChannel(id: any): Observable<Object> {
+    let url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${this.apiKey}`;
     return this.http.get(url).pipe(map(res => {
       return res;
     }));

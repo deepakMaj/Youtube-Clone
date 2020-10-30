@@ -1,0 +1,139 @@
+.main{
+  margin: 0 3em 0 3em;
+}
+
+.ui.card{
+  margin-bottom: 1.5em;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.description{
+  color: #a0a0a0;
+  font-size: 16px;
+  margin-top: 0.5em;
+}
+
+.views{
+  color: #a0a0a0;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0.1em;
+}
+
+.header{
+  font-size: 1.2em;
+  font-family: 'Roboto', "sans-serif";
+  color: white;
+}
+
+.content{
+  margin-left: 10px;
+}
+
+.result{
+  width: 60vh;
+  display: flex;
+}
+
+.search-results{
+  color: rgb(170, 170, 170);
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.title{
+  color: white;
+  font-size: 22px;
+}
+
+.data{
+  margin-top: 1em;
+}
+
+.dot.circle.icon{
+  margin: 2px 5px;
+  font-size: 5px;
+}
+
+.ui.divider{
+  margin: 1.8em 0;
+}
+
+.thumbs.up.icon, .thumbs.down.icon{
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+.thumbs.down.icon{
+  transform: scaleX(-1);
+}
+
+.likes{
+  position: absolute;
+  left: 80%;
+  display: flex;
+}
+
+.channelTitle{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.disName{
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn{
+  position: absolute;
+  left: 82%;
+}
+
+.ui.avatar.image{
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+}
+
+.ui.youtube.button{
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 0.1em;
+}
+
+.channelDesc{
+  margin-top: 0.5em;
+}
+
+.viddesc{
+  color: white;
+  font-size: 17px;
+  white-space: break-spaces;
+  margin-top: 2em;
+}
+
+.comviews{
+  color: #a0a0a0;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 1em;
+}
+
+.comdesc{
+  color: white;
+  font-size: 15px;
+  word-break: break-all;
+  width: 80%;
+  margin-top: -5px;
+}
+
+.show{
+  color: rgb(139, 139, 139);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 2em;
+}

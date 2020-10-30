@@ -60,3 +60,12 @@
   margin-left: 2em;
   font-weight: 600;
 }
+
+.footer{
+  position: absolute;
+  top: 95%;
+  left: 25%;
+  color: rgb(148, 148, 148);
+  font-size: 15px;
+  font-weight: bold;
+}
