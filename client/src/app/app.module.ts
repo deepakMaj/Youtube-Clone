@@ -15,6 +15,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { WatchVideoComponent } from './components/watch-video/watch-video.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     HomeComponent,
     SearchComponent,
     SearchResultComponent,
-    WatchVideoComponent
+    WatchVideoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
