@@ -13,4 +13,4 @@ Youtube Clone build with MEAN Stack.
 ![YT6](images/YT6.PNG)
 ![YT7](images/YT7.PNG)
 
-## Note: Developed only for learning purpose, copyrights belongs to original developers.
+###### Note: Developed only for learning purpose, copyrights belongs to original developers.
